@@ -1,10 +1,10 @@
 {
   "name": "trades-control",
   "version": "1.0.0",
-  "description": "trades control for dacyti",
+  "description": "web application to have control over the documents received in the department of diffusion and culture of dacyti-ujat.",
   "main": "index.ts",
   "author": "Daniel Campos",
-  "license": "MIT",
+  "license": "LGPL-3.0-or-later",
   "private": true,
   "scripts": {
     "dev": "next",
