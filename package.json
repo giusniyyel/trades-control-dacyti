@@ -24,5 +24,8 @@
     "@types/react-dom": "^18.0.3",
     "prisma": "^3.13.0",
     "typescript": "^4.6.4"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
   }
 }
