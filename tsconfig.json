@@ -6,6 +6,9 @@
     "paths": {
       "@lib/*": [
         "src/lib/*"
+      ],
+      "@components/*": [
+        "src/components/*"
       ]
     },
     "allowJs": false,
