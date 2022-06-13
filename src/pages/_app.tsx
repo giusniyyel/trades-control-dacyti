@@ -1,39 +1,12 @@
-import React from 'react'
-import type { AppProps } from 'next/app'
-import { CacheProvider, EmotionCache } from '@emotion/react'
-import { ThemeProvider, CssBaseline, createTheme } from '@mui/material'
-
-import '@fontsource/roboto/300.css'
-import '@fontsource/roboto/300.css'
-import '@fontsource/roboto/300.css'
-import '@fontsource/roboto/300.css'
-
-import createEmotionCache from '../utility/createEmotionCache'
-import lightThemeOptions from '../styles/theme/lightThemeOptions'
-import '../styles/globals.css'
-
-import Sidebar from '@components/sidebar/sidebar'
-
-interface MyAppProps extends AppProps {
-  emotionCache?: EmotionCache
+export interface AppRenderProps {
+  pageProps: object
+  err?: Error
+  Component: NextComponentType<NextPageContext, AppRenderProps, object>
+  router: NextRouter
 }
+import type { NextComponentType, NextPageContext } from 'next'
+import type { NextRouter } from 'next/router'
 
-const clientSideEmotionCache = createEmotionCache()
-
-const lightTheme = createTheme(lightThemeOptions)
-
-const MyApp: React.FunctionComponent<MyAppProps> = props => {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
-
-  return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={lightTheme}>
-        <CssBaseline />
-        <Sidebar />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </CacheProvider>
-  )
+export default function App({ Component, pageProps }: AppRenderProps) {
+  return <Component {...pageProps} />
 }
-
-export default MyApp
